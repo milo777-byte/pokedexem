@@ -1,0 +1,81 @@
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'Press Start 2P', cursive;
+    color: #fff;
+    background: #000000;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.1);
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 10px 15px;
+    border-radius: 8px;
+}
+
+.stat-item h2 {
+    font-size: 0.7rem;
+    color: #ffeb3b;
+    margin: 0;
+    margin-right: 10px;
+    min-width: 80px;
+}
+
+.stat-item p {
+    font-size: 0.7rem;
+    color: #fff;
+    margin: 0;
+    margin-left: auto;
+}
+
+/* Solo para el stat-item que contiene la barra de vida */
+.stat-item:nth-child(4) {
+    padding-right: 15px;
+}
+
+.bar-container {
+    flex-grow: 1;
+    height: 15px;
+    background-color: #333;
+    border-radius: 7px;
+    overflow: hidden;
+    margin: 0 10px;
+}
+
+.bar {
+    height: 100%;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+}
+
+.health-container {
+    flex-grow: 1;
+    height: 15px;
+    background-color: #424242;
+    border-radius: 7px;
+    overflow: hidden;
+    margin-right: 10px;
+    border: 1px solid #ffeb3b;
+}
+
+.health-bar {
+    height: 100%;
+    background: linear-gradient(to right, #4CAF50, #8BC34A);
+}
+
+/* Contenedores específicos para vida, ataque y defensa */
+.health-container, .attack-container, .defense-container {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin-left: auto;
+}
+
+.health, .attack, .defense {
+    font-size: 0.7rem;
+}

@@ -1,0 +1,29 @@
+<section class="stats">
+    <div class="stat-item">
+        <h2>ID:</h2>
+        <p>{{idPokemon}}</p>
+    </div>
+    <div class="stat-item">
+        <h2>Nombre:</h2>
+        <p>{{nombrePokemon}}</p>
+    </div>
+    <div class="stat-item">
+        <h2>Tipo:</h2>
+        <p>{{tipoPokemon}}</p>
+    </div>
+    <div class="stat-item">
+        <h2>Vida:</h2>
+        <div class="bar-container">
+            <div class="bar" [style.width.%]="vidaPokemon"></div>
+        </div>
+        <p>{{vidaPokemon}}/100</p>
+    </div>
+    <div class="stat-item">
+        <h2>Ataque:</h2>
+        <p>{{ataquePokemon}}</p>
+    </div>
+    <div class="stat-item">
+        <h2>Defensa:</h2>
+        <p>{{defensaPokemon}}</p>
+    </div>
+</section>

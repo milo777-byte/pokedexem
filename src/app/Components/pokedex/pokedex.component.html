@@ -1,0 +1,11 @@
+<div class="pokedex-container">
+    <img [src]="imageUrl" class="pokemon-image" alt="Pokemon Image">
+    <div class="button-container">
+        <button class="arrow-button" (click)="previousPokemon()">
+            &#9664; <!-- Flecha izquierda -->
+        </button>
+        <button class="arrow-button" (click)="nextPokemon()">
+            &#9654; <!-- Flecha derecha -->
+        </button>
+    </div>
+</div>

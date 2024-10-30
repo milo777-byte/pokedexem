@@ -1,0 +1,67 @@
+.pokedex-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+    position: relative;
+}
+
+.pokemon-image {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
+    padding: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 300px;
+    position: absolute;
+    bottom: 20px;
+}
+
+.arrow-button {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #ff4e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.arrow-button:hover {
+    color: #fc913a;
+    transform: scale(1.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Media queries para responsividad */
+@media (max-width: 400px) {
+    .pokemon-image {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .arrow-button {
+        font-size: 1.5rem;
+    }
+}

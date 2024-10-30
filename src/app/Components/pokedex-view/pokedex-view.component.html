@@ -1,0 +1,14 @@
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<section class="pokedex-view">
+    <span class="title">Pokedex</span>
+    <div class="content-container">
+        <section class="pokedex">
+            <app-pokedex [imageUrl]=pokemonImagen (pokemonId)="changePokemon($event)"></app-pokedex>
+        </section>
+        
+        <section class="graph"> 
+            <app-graph [pokemonId]="pokemonId"></app-graph>
+        </section>
+    </div>
+</section>
+
