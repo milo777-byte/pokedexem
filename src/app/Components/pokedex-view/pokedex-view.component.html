@@ -1,7 +1,10 @@
-<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <section class="pokedex-view">
     <span class="title">Pokedex</span>
     <div class="content-container">
+        <div class="search-container">
+            <input type="number" [(ngModel)]="searchId" placeholder="Buscar por ID" class="search-input">
+            <button (click)="searchPokemon()" class="search-button">Buscar</button>
+        </div>
         <section class="pokedex">
             <app-pokedex [imageUrl]=pokemonImagen (pokemonId)="changePokemon($event)"></app-pokedex>
         </section>
@@ -11,4 +14,3 @@
         </section>
     </div>
 </section>
-
