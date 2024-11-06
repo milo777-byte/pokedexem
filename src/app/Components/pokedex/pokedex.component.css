@@ -6,62 +6,86 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
-    border-radius: 20px;
+    background: #f0f0f0;
+    border-radius: 15px;
     padding: 20px;
-    box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff;
+    position: relative;
+    box-shadow: inset 0 0 20px rgba(0,0,0,0.1);
+}
+
+.pokemon-display {
+    width: 240px;
+    height: 240px;
+    background: linear-gradient(145deg, #ffffff, #e6e6e6);
+    border: 8px solid #333;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1), inset 0 0 50px rgba(0,0,0,0.1);
     position: relative;
 }
 
+.pokemon-display::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.1) 100%);
+    z-index: 1;
+}
+
 .pokemon-image {
-    width: 200px;
-    height: 200px;
+    width: 180px;
+    height: 180px;
     object-fit: contain;
     animation: float 3s ease-in-out infinite;
-    background: radial-gradient(circle, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0) 70%);
-    padding: 20px;
+    filter: drop-shadow(0 5px 15px rgba(0,0,0,0.3));
+    image-rendering: pixelated;
+    z-index: 2;
 }
 
 .button-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 300px;
+    max-width: 280px;
     position: absolute;
     bottom: 20px;
 }
 
 .arrow-button {
-    background: transparent;
-    border: none;
-    font-size: 2rem;
-    color: #ff4e50;
+    background: #ff4757;
+    border: 4px solid #333;
+    font-size: 1rem;
+    color: #ffffff;
     cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 10px;
-    border-radius: 50%;
+    transition: all 0.2s ease;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', cursive;
+    box-shadow: -3px 3px 0px #333;
 }
 
 .arrow-button:hover {
-    color: #fc913a;
-    transform: scale(1.2);
-    background: rgba(255, 255, 255, 0.2);
+    transform: translate(1px, -1px);
+    box-shadow: -4px 4px 0px #333;
+    background: #ff6b81;
+}
+
+.arrow-button:active {
+    transform: translate(3px, -3px);
+    box-shadow: -1px 1px 0px #333;
+    background: #ff4757;
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-/* Media queries para responsividad */
-@media (max-width: 400px) {
-    .pokemon-image {
-        width: 150px;
-        height: 150px;
-    }
-    
-    .arrow-button {
-        font-size: 1.5rem;
-    }
+    0% { transform: translateY(0px) rotate(0deg); }
+    25% { transform: translateY(-5px) rotate(-5deg); }
+    50% { transform: translateY(-10px) rotate(0deg); }
+    75% { transform: translateY(-5px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
 }
